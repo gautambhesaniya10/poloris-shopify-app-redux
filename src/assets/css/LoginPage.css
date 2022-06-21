@@ -1,0 +1,17 @@
+.mainLoginDiv{
+    margin: 10%;
+    display: grid;
+    justify-content: center;
+}
+
+.loginHeading{
+    font-size: 30px;
+    display: grid;
+    justify-content: center;
+}
+
+.btnClass{
+    display: grid;
+    justify-content: center;
+    margin-top: 5%;
+}
