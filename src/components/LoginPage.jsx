@@ -30,12 +30,6 @@ const LoginPage = (props) => {
         dispatch(getApi())
     }, []);
 
-    // useEffect(() => {
-    //    if (open === true) {
-    //          navigate("http://localhost:3000/dashboard")
-    //    }
-    // }, );
-
     const handleLoginSubmit = (value) => {
         if (value) {
             let data = getUser.find(item => item.email === value.email);
