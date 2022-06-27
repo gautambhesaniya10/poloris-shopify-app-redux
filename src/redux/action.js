@@ -1,4 +1,4 @@
-import { GET_DATA, ADD_USER } from './type';
+import { GET_DATA, ADD_USER, DELETE_USER, EDIT_USER } from './type';
 import axios from "axios";
 import {  message } from 'antd';
 
@@ -15,6 +15,20 @@ export const addUser = (user) => {
     return{
         type : ADD_USER,
         payload : user
+    }
+}
+
+export const deleteUser = (userID) => {
+    return{
+        type : DELETE_USER,
+        payload : userID
+    }
+}
+
+export const editUser = () => {
+    return{
+        type : EDIT_USER,
+        // payload : data
     }
 }
 
@@ -41,4 +55,34 @@ export const postApi = (value) => {
         })
         return apiData
     }
+}
+
+
+export const delUserApi = (userId) => {
+    return async (dispatch) => {
+        let delUser = await axios.delete(`http://localhost:3001/users/${userId}`).then((res) => {
+            message.success("User Sucessfully Deleted !")
+            let data = res.data;
+            dispatch(deleteUser(data))
+            return data;
+        }).catch((error) => {
+            console.log("error",error);
+        })
+        return delUser
+    }
+}
+
+export const editUserApi = (userId , data) => {
+return  (dispatch) => {
+    let edit =  axios.put(`http://localhost:3001/users/${userId}` , data).then((res) => {
+        message.success("User Edit Sucessfully !")
+        let editData = res.data;
+        localStorage.setItem('token', editData.email);
+        dispatch(editUser(editData))
+        return editData;
+    }).catch((error) => {
+        console.log("error",error);
+    })
+    return edit
+}
 }

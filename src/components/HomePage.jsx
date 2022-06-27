@@ -23,12 +23,12 @@ const HomePage = () => {
 
     const loginHandler = (route) => {
         if (route === "login") {
-            window.open(
-                `http://localhost:3000/login`,
-                "_blank",
-                "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=200,width=600,height=650"
-              );
-            // navigate("/login")
+            // window.open(
+            //     `http://localhost:3000/login`,
+            //     "_blank",
+            //     "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=200,width=600,height=650"
+            //   );
+            navigate("/login")
         }
     }
     const signUpHandler = (route) => {
