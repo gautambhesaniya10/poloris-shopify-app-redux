@@ -24,8 +24,8 @@ const userReducer = (state = initialstate , action ) => {
                 }
                 case EDIT_USER:
                     return{
-                        ...state
-                        // user : action.payload
+                        ...state,
+                         user : action.payload
                     }
         default:
             return state;

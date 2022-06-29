@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import logo from "../assets/logo.png";
-import { Button, Form, Image, Input, message } from 'antd';
+import { Button, Form, Image, Input,  message } from 'antd';
 import "antd/dist/antd.css";
 import '../assets/css/LoginPage.css'
 import { useNavigate } from 'react-router-dom';
@@ -131,7 +131,6 @@ const LoginPage = (props) => {
                                         props.component === "login" ? <Button onClick={() => navigate("/signup")} type="link">SignUp ?</Button> : <Button onClick={() => navigate("/login")} type="link">Login ?</Button>
                                     }
                                 </Form.Item>
-
                             </Form>
                         </div>
                     </div>
