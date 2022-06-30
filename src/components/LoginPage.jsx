@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import logo from "../assets/logo.png";
 import { Button, Form, Image, Input,  message } from 'antd';
-import "antd/dist/antd.css";
 import '../assets/css/LoginPage.css'
 import { useNavigate } from 'react-router-dom';
 import { getApi, postApi } from '../redux/action';

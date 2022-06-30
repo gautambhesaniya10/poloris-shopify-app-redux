@@ -5,12 +5,13 @@ import {
   Route,
 } from "react-router-dom";
 import "@shopify/polaris/build/esm/styles.css";
+import "antd/dist/antd.css";
 import HomePage from './components/HomePage';
 import { AppProvider as PolarisProvider } from "@shopify/polaris";
 import LoginPage from './components/LoginPage';
 import DashboardPage from './components/DashboardPage';
 import PrivateRoute from './services/PrivateRoute';
-
+import CounDown from './components/CounDown';
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
             </Routes>
           </BrowserRouter>
         </PolarisProvider>
+
+        <CounDown />
       </div>
     </>
   );
